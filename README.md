@@ -47,3 +47,19 @@ O site não depende de framework nem de serviços pagos. O botão de copiar a re
 
 ## Conteúdo e fontes
 O conteúdo biográfico foi reescrito exclusivamente com base na release fornecida para este projeto. Não foram criados depoimentos, números de eventos, contratos ou conquistas não comprovadas.
+
+## Fotos reais do portfólio
+A galeria e o destaque do artista já estão referenciados no `index.html`, mas os arquivos binários precisam existir no repositório, dentro da pasta `assets/`, com os nomes exatos:
+
+- `assets/dj-juninho.png`
+- `assets/evento-pista-dourada.jpg`
+- `assets/evento-tela-pista.jpg`
+- `assets/evento-estrutura-lilas.jpg`
+- `assets/evento-pista-animada.jpg`
+
+Foi preparado um ZIP contendo esses cinco arquivos com os nomes certos. **Não considerar a galeria publicada integralmente enquanto não houver o upload dos arquivos**. No GitHub, envie a pasta `assets/` e faça commit na branch `main`; o Render disparará deploy automático. Até lá os endereços locais das imagens não funcionarão.
+
+## Contatos atualizados
+Instagram oficial: https://www.instagram.com/djjuninhobsb/
+
+Telefone fornecido: `6192019714`. É um número de 10 dígitos incluindo DDD; confirmar os dígitos com o responsável antes de configurar o botão de WhatsApp (números móveis brasileiros normalmente têm 11 dígitos com DDD).
