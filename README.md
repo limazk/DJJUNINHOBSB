@@ -6,7 +6,7 @@ Site de apresentação artística do **DJ Juninho-BSB** (Marcos R. Junior), de B
 - Apresentação artística em destaque.
 - História de sua trajetória e marcos aos 13 e 16 anos.
 - Tipos de eventos citados no release original.
-- Release oficial revisado, com botão **Copiar release**.
+- Release oficial revisado, integrado à apresentação artística.
 - Seção de contato / redes sociais.
 - Interface responsiva, menu móvel acessível, animações respeitando preferências de movimento reduzido.
 
@@ -43,7 +43,7 @@ Assim que o endereço oficial for confirmado, substitua no `index.html` o link e
 - Agenda, portfólio de eventos e vídeos ou sets, quando disponíveis e autorizados.
 
 ## Manutenção
-O site não depende de framework nem de serviços pagos. O botão de copiar a release usa a API Clipboard do navegador; esta funcionalidade funciona com mais consistência quando o site está publicado por HTTPS (como no GitHub Pages).
+O site não depende de framework nem de serviços pagos. A release é exibida diretamente no site como uma apresentação editorial.
 
 ## Conteúdo e fontes
 O conteúdo biográfico foi reescrito exclusivamente com base na release fornecida para este projeto. Não foram criados depoimentos, números de eventos, contratos ou conquistas não comprovadas.
