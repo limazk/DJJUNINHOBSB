@@ -194,10 +194,6 @@
     .release-body p { margin: 0 0 19px; }
     .release-body strong { color: white; }
     .release-quote { margin: 30px 0; padding: 2px 0 2px 24px; border-left: 3px solid var(--purple); font: 600 clamp(1.15rem, 2.5vw, 1.5rem)/1.55 'Space Grotesk',sans-serif; color: #eae6ff; letter-spacing: -.025em; }
-    .release-bottom { border-top: 1px solid var(--line); margin-top: 31px; padding-top: 23px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .release-bottom p { margin: 0; color: var(--muted-2); font-size: .84rem; }
-    .release-bottom .btn { min-height: 47px; }
-    .copy-feedback { color: var(--cyan); font-size: .82rem; min-height: 1.4em; }
 
     /* Contato */
     .contact { padding-top: 82px; padding-bottom: 100px; }
@@ -263,8 +259,6 @@
       .milestone .age { font-size: 1.7rem; }
       .release-card { border-radius: 20px; }
       .release-body { font-size: .95rem; }
-      .release-bottom { align-items: flex-start; flex-direction: column; }
-      .release-bottom .btn { width: 100%; }
       .contact-panel { border-radius: 20px; }
       .contact-actions .btn { width: 100%; }
     }
@@ -412,10 +406,6 @@
             <blockquote class="release-quote">Mais do que tocar músicas, sua missão é transformar momentos em lembranças inesquecíveis.</blockquote>
             <p>Para DJ Juninho-BSB, cada apresentação é uma oportunidade de compartilhar energia, celebrar histórias e fazer da música o elo entre pessoas e experiências.</p>
           </div>
-          <div class="release-bottom">
-            <div><p>Texto pronto para usar em divulgação e apresentações.</p><span class="copy-feedback" role="status" aria-live="polite" id="copy-feedback"></span></div>
-            <button class="btn btn-outline" type="button" id="copiar-release"><span aria-hidden="true">⧉</span> Copiar release</button>
-          </div>
         </article>
       </div>
     </section>
@@ -497,29 +487,6 @@
         });
       }
 
-      var copyButton = document.getElementById('copiar-release');
-      var feedback = document.getElementById('copy-feedback');
-      var releaseBody = document.getElementById('texto-release');
-      function getReleaseText() {
-        return 'DJ JUNINHO-BSB — RELEASE ARTÍSTICO\n\nUM SONHO QUE SE TORNOU REALIDADE.\n\n' +
-          Array.prototype.slice.call(releaseBody.children).map(function (node) {
-            return node.textContent.trim();
-          }).join('\n\n') + '\n\nBrasília / DF';
-      }
-      copyButton.addEventListener('click', function () {
-        var content = getReleaseText();
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(content).then(function () {
-            feedback.textContent = 'Release copiado!';
-            copyButton.textContent = '✓ Copiado';
-            setTimeout(function () { copyButton.textContent = '⧉ Copiar release'; }, 2200);
-          }).catch(function () {
-            feedback.textContent = 'Não foi possível copiar automaticamente. Selecione o texto acima para copiar.';
-          });
-        } else {
-          feedback.textContent = 'Selecione o texto acima para copiar o release.';
-        }
-      });
     }());
   </script>
 </body>
