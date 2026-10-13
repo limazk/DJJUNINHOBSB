@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080911">
+  <meta name="description" content="Conheça a trajetória de DJ Juninho-BSB, de Brasília para os eventos que merecem uma trilha sonora inesquecível. Release artístico, história e apresentações.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="DJ Juninho-BSB | Música que transforma momentos">
+  <meta property="og:description" content="Do primeiro sonho às pistas e celebrações de Brasília. Conheça o release oficial de DJ Juninho-BSB.">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>DJ Juninho-BSB — Música que transforma momentos</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090a12;
+      --bg-alt: #0e101c;
+      --card: #151725;
+      --card-alt: #191b2b;
+      --line: rgba(255,255,255,.10);
+      --text: #f5f6ff;
+      --muted: #a7a9c2;
+      --muted-2: #7f849e;
+      --cyan: #45dbec;
+      --purple: #a178ff;
+      --gradient: linear-gradient(115deg, #45dbec 0%, #8d8bff 57%, #c66bfa 100%);
+      --radius: 22px;
+      --wrap: 1180px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; overflow-x: hidden; background: var(--bg); color: var(--text); font: 400 16px/1.65 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body::before { content: ""; position: fixed; inset: 0; z-index: -1; opacity: .16; pointer-events: none; background: radial-gradient(ellipse at 70% -20%, #493487, transparent 55%); }
+    ::selection { background: #6861c9; color: white; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    img, svg { max-width: 100%; }
+    .container { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0,0,0,0); white-space: nowrap; overflow: hidden; }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 999; padding: 10px 16px; background: white; color: #080911; transform: translateY(-180%); }
+    .skip-link:focus { transform: none; }
+    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+    .gradient-text { background: var(--gradient); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 24px; color: #a9b6dd; letter-spacing: .22em; text-transform: uppercase; font-size: .74rem; font-weight: 700; }
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--cyan); }
+    .section-title { margin: 0 0 22px; font: 700 clamp(2.4rem, 5.2vw, 4.35rem)/1.10 'Space Grotesk', sans-serif; letter-spacing: -.055em; }
+    .section-lead { max-width: 640px; margin: 0; font-size: 1.08rem; color: var(--muted); }
+    .section { padding: 112px 0; position: relative; }
+    .btn { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; border-radius: 100px; padding: 12px 24px; font-size: .92rem; font-weight: 700; letter-spacing: -.01em; transition: transform .2s, border-color .2s, background .2s, box-shadow .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #0a101b; background: var(--gradient); border: 1px solid transparent; box-shadow: 0 10px 38px rgba(112,102,250,.18); }
+    .btn-primary:hover { box-shadow: 0 14px 45px rgba(112,102,250,.30); }
+    .btn-outline { color: var(--text); border: 1px solid rgba(255,255,255,.23); background: rgba(255,255,255,.025); }
+    .btn-outline:hover { border-color: var(--cyan); background: rgba(69,219,236,.06); }
+    .arrow { font-size: 1.2rem; line-height: 1; }
+
+    /* Cabeçalho e navegação */
+    .site-header { position: fixed; z-index: 100; top: 0; left: 0; right: 0; border-bottom: 1px solid transparent; transition: background .25s, border-color .25s; }
+    .site-header.is-scrolled, .site-header.is-open { background: rgba(9,10,18,.94); border-color: var(--line); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+    .nav-inner { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 13px; font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: -.035em; line-height: 1.2; flex-shrink: 0; }
+    .brand small { display: block; color: var(--muted-2); font: 700 .62rem/1.4 'DM Sans', sans-serif; letter-spacing: .25em; text-transform: uppercase; margin-top: 1px; }
+    .brand-mark { display: flex; width: 42px; height: 42px; gap: 3px; align-items: center; justify-content: center; border-radius: 13px; background: var(--gradient); box-shadow: 0 4px 23px rgba(123,113,245,.18); }
+    .brand-mark i { width: 3px; border-radius: 6px; background: #0a1220; display: block; }
+    .brand-mark i:nth-child(1), .brand-mark i:nth-child(5) { height: 9px; }
+    .brand-mark i:nth-child(2), .brand-mark i:nth-child(4) { height: 17px; }
+    .brand-mark i:nth-child(3) { height: 25px; }
+    .nav-links { display: flex; align-items: center; gap: clamp(17px, 2.2vw, 32px); }
+    .nav-links a { font-size: .84rem; font-weight: 700; color: #bebed0; white-space: nowrap; transition: color .2s; }
+    .nav-links a:hover, .nav-links a[aria-current="location"] { color: var(--cyan); }
+    .nav-cta { padding: 10px 18px; min-height: 44px; white-space: nowrap; }
+    .menu-button { display: none; place-items: center; background: transparent; border: 1px solid var(--line); color: white; border-radius: 12px; width: 44px; height: 44px; }
+    .menu-button span { width: 20px; height: 2px; background: currentColor; display: block; position: relative; border-radius: 2px; }
+    .menu-button span::before, .menu-button span::after { content: ""; width: 20px; height: 2px; background: currentColor; position: absolute; left: 0; border-radius: 2px; transition: transform .2s; }
+    .menu-button span::before { transform: translateY(-7px); }
+    .menu-button span::after { transform: translateY(7px); }
+    .site-header.is-open .menu-button span { background: transparent; }
+    .site-header.is-open .menu-button span::before { transform: rotate(45deg); }
+    .site-header.is-open .menu-button span::after { transform: rotate(-45deg); }
+
+    /* Hero */
+    .hero { position: relative; min-height: min(880px, 100svh); padding: 170px 0 112px; display: flex; align-items: center; isolation: isolate; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; z-index: -2; width: 860px; height: 860px; border-radius: 50%; right: -280px; top: 50%; transform: translateY(-53%); opacity: .72; background: radial-gradient(circle, rgba(84,68,194,.25) 0%, rgba(32,57,127,.12) 47%, transparent 70%); }
+    .hero::after { content: ""; position: absolute; z-index: -2; inset: 0; opacity: .20; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 66px 66px; mask-image: linear-gradient(to bottom, black, transparent 92%); }
+    .hero-layout { display: grid; grid-template-columns: 1.04fr .96fr; gap: 44px; align-items: center; }
+    .hero-copy { position: relative; z-index: 2; padding: 32px 0 30px; }
+    .hero-kicker { display: inline-flex; gap: 12px; align-items: center; color: #b7c5e4; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.035); padding: 8px 14px; border-radius: 60px; letter-spacing: .16em; font-size: .69rem; font-weight: 700; text-transform: uppercase; margin-bottom: 26px; }
+    .pulse-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 4px rgba(69,219,236,.10); }
+    .hero h1 { margin: 0 0 28px; max-width: 740px; font: 700 clamp(3.6rem, 6.35vw, 6.55rem)/.98 'Space Grotesk', sans-serif; letter-spacing: -.075em; }
+    .hero h1 span { display: block; }
+    .hero-description { max-width: 510px; margin: 0 0 34px; color: #afb3ca; font-size: 1.07rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-caption { display: flex; align-items: center; gap: 12px; margin-top: 70px; text-transform: uppercase; color: #9299b3; letter-spacing: .16em; font-size: .67rem; font-weight: 700; }
+    .hero-caption .line { display: inline-block; width: 54px; height: 1px; background: rgba(255,255,255,.26); }
+    .hero-art { position: relative; min-height: 530px; display: grid; place-items: center; }
+    .art-halo { position: absolute; width: min(550px, 104%); aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(137,126,239,.13); box-shadow: 0 0 0 40px rgba(123,113,245,.022), 0 0 0 100px rgba(123,113,245,.012); }
+    .vinyl { position: relative; width: min(425px, 92%); aspect-ratio: 1; border-radius: 50%; background: repeating-radial-gradient(circle at center, #151626 0 5px, #202235 6px 7px, #10121e 8px 12px); border: 1px solid rgba(176,172,255,.26); box-shadow: 0 0 45px rgba(98,86,238,.25), 24px 38px 80px rgba(0,0,0,.65), inset -22px -12px 55px rgba(0,0,0,.60); animation: rotateRecord 24s linear infinite; }
+    .vinyl::before { content: ""; position: absolute; inset: 4%; border-radius: 50%; border: 2px solid rgba(255,255,255,.085); box-shadow: inset 0 0 0 32px rgba(0,0,0,.04), 0 0 0 26px rgba(255,255,255,.025); }
+    .vinyl::after { content: ""; position: absolute; inset: 11%; border-radius: 50%; background: conic-gradient(from 65deg, transparent 0deg, rgba(129,109,247,.15) 38deg, transparent 56deg, transparent 170deg, rgba(69,219,236,.10) 220deg, transparent 244deg); }
+    .record-label { position: absolute; inset: 33%; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); background: conic-gradient(from 40deg, #48a9de, #a072ff, #5a4baf, #48a9de); display: flex; flex-direction: column; justify-content: center; align-items: center; line-height: 1; color: #090a12; font: 700 1.15rem 'Space Grotesk',sans-serif; letter-spacing: -.05em; text-align: center; z-index: 1; }
+    .record-label small { font: 700 .48rem/1.4 'DM Sans',sans-serif; letter-spacing: .15em; padding-top: 5px; }
+    .record-label b { width: 8px; height: 8px; background: #111323; border: 2px solid #dad6ff; border-radius: 50%; margin-top: 7px; }
+    .floating-label { position: absolute; z-index: 3; border-radius: 14px; border: 1px solid rgba(255,255,255,.15); background: rgba(24,26,44,.86); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); box-shadow: 0 18px 55px rgba(0,0,0,.35); }
+    .floating-label.top { top: 25px; right: 3%; padding: 15px 20px; text-align: left; }
+    .floating-label.top span { display: block; font-size: .61rem; color: var(--muted); text-transform: uppercase; letter-spacing: .15em; }
+    .floating-label.top strong { display: block; font: 700 1.02rem/1.6 'Space Grotesk', sans-serif; }
+    .floating-label.bottom { bottom: 52px; left: 0; display: flex; align-items: center; gap: 13px; padding: 14px 20px; }
+    .floating-label.bottom strong { display: block; font-size: .83rem; }
+    .floating-label.bottom span { font-size: .68rem; color: var(--muted); }
+    .bars { display: flex; align-items: center; gap: 3px; height: 24px; }
+    .bars i { width: 3px; height: 12px; border-radius: 3px; background: var(--gradient); animation: wave 1.2s ease-in-out infinite alternate; }
+    .bars i:nth-child(2) { height: 21px; animation-delay: -.3s; }
+    .bars i:nth-child(3) { height: 16px; animation-delay: -.7s; }
+    .bars i:nth-child(4) { height: 23px; animation-delay: -.2s; }
+    .bars i:nth-child(5) { height: 10px; animation-delay: -.5s; }
+    @keyframes rotateRecord { to { transform: rotate(360deg); } }
+    @keyframes wave { to { transform: scaleY(.42); } }
+
+    /* Tira informativa */
+    .ticker { padding: 22px 0; border-block: 1px solid var(--line); background: rgba(255,255,255,.018); }
+    .ticker-inner { display: flex; gap: 20px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .ticker-item { display: flex; align-items: center; gap: 12px; font: 700 .72rem 'Space Grotesk',sans-serif; color: #b0b4cc; text-transform: uppercase; letter-spacing: .16em; }
+    .ticker-item::before { content: "✦"; color: var(--cyan); font-size: .95rem; }
+
+    /* História */
+    .about-grid { display: grid; grid-template-columns: .87fr 1.13fr; align-items: start; gap: clamp(36px, 8vw, 124px); }
+    .about-intro { position: sticky; top: 130px; }
+    .about-intro .quote { margin: 32px 0 0; border-left: 2px solid var(--cyan); padding: 0 0 0 22px; font: 500 1.25rem/1.5 'Space Grotesk',sans-serif; color: #dadcf6; letter-spacing: -.025em; }
+    .about-text p { margin: 0 0 22px; color: var(--muted); font-size: 1.02rem; line-height: 1.87; }
+    .about-text p strong { color: var(--text); font-weight: 700; }
+    .timeline { position: relative; display: grid; gap: 18px; margin-top: 42px; }
+    .milestone { display: grid; grid-template-columns: 76px 1fr; gap: 20px; padding: 22px 24px; background: linear-gradient(120deg, rgba(255,255,255,.046), rgba(255,255,255,.017)); border: 1px solid var(--line); border-radius: 17px; }
+    .milestone .age { font: 700 2rem/1.15 'Space Grotesk', sans-serif; letter-spacing: -.07em; color: var(--cyan); }
+    .milestone h3 { margin: 0 0 5px; font: 700 1rem 'Space Grotesk', sans-serif; }
+    .milestone p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.6; }
+
+    /* Eventos */
+    .events { background: var(--bg-alt); border-block: 1px solid rgba(255,255,255,.04); }
+    .section-top { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 48px; }
+    .section-top .section-title { max-width: 640px; margin-bottom: 0; }
+    .section-top .section-lead { max-width: 360px; }
+    .event-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .event-card { position: relative; isolation: isolate; min-height: 295px; display: flex; flex-direction: column; justify-content: space-between; padding: 26px 24px; background: #171a2a; border: 1px solid rgba(255,255,255,.10); border-radius: 19px; overflow: hidden; transition: transform .25s, border-color .25s; }
+    .event-card:hover { transform: translateY(-6px); border-color: rgba(124,172,247,.50); }
+    .event-card::before { content: ""; position: absolute; z-index: -1; width: 280px; height: 280px; right: -110px; bottom: -155px; border-radius: 50%; background: radial-gradient(circle, var(--glow, rgba(69,219,236,.14)), transparent 68%); }
+    .event-card .number { font: 600 .75rem 'Space Grotesk', sans-serif; color: #a4aed4; letter-spacing: .12em; }
+    .event-card svg { width: 54px; height: 54px; stroke: #c5b9ff; fill: none; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+    .event-card h3 { margin: 0 0 8px; font: 700 1.20rem/1.3 'Space Grotesk',sans-serif; letter-spacing: -.035em; }
+    .event-card p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
+
+    /* Release */
+    .release-head { text-align: center; max-width: 780px; margin: 0 auto 53px; }
+    .release-head .eyebrow { justify-content: center; }
+    .release-head .section-lead { margin-inline: auto; }
+    .release-card { position: relative; max-width: 960px; margin: 0 auto; border: 1px solid rgba(172,176,238,.18); border-radius: 28px; background: linear-gradient(165deg, #1b1d2d, #10121e 64%, #121421); padding: clamp(28px, 5.8vw, 66px); overflow: hidden; }
+    .release-card::before { content: ""; width: 420px; height: 420px; position: absolute; right: -185px; top: -240px; border-radius: 50%; background: radial-gradient(circle, rgba(143,112,246,.18), transparent 72%); pointer-events: none; }
+    .release-meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
+    .release-meta span { font-size: .73rem; color: #a5acc8; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; }
+    .release-meta .tag { padding: 6px 12px; border: 1px solid rgba(69,219,236,.26); background: rgba(69,219,236,.08); border-radius: 50px; color: #a4f5f6; letter-spacing: .09em; }
+    .release-card h3 { margin: 34px 0 27px; font: 700 clamp(2rem, 4.5vw, 3.35rem)/1.14 'Space Grotesk', sans-serif; letter-spacing: -.06em; max-width: 650px; }
+    .release-body { color: #bec1d4; font-size: 1.01rem; line-height: 1.94; }
+    .release-body p { margin: 0 0 19px; }
+    .release-body strong { color: white; }
+    .release-quote { margin: 30px 0; padding: 2px 0 2px 24px; border-left: 3px solid var(--purple); font: 600 clamp(1.15rem, 2.5vw, 1.5rem)/1.55 'Space Grotesk',sans-serif; color: #eae6ff; letter-spacing: -.025em; }
+    .release-bottom { border-top: 1px solid var(--line); margin-top: 31px; padding-top: 23px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .release-bottom p { margin: 0; color: var(--muted-2); font-size: .84rem; }
+    .release-bottom .btn { min-height: 47px; }
+    .copy-feedback { color: var(--cyan); font-size: .82rem; min-height: 1.4em; }
+
+    /* Contato */
+    .contact { padding-top: 82px; padding-bottom: 100px; }
+    .contact-panel { position: relative; overflow: hidden; padding: clamp(32px, 6.5vw, 80px); border-radius: 30px; border: 1px solid rgba(143,132,255,.28); background: radial-gradient(ellipse at 92% 5%, rgba(117,91,240,.28), transparent 47%), radial-gradient(ellipse at 5% 100%, rgba(56,187,215,.11), transparent 48%), #171625; }
+    .contact-panel::after { content: ""; position: absolute; top: -88px; right: -70px; width: 300px; height: 300px; border: 1px solid rgba(220,214,255,.11); border-radius: 50%; box-shadow: 0 0 0 45px rgba(175,161,255,.03), 0 0 0 90px rgba(175,161,255,.025); pointer-events: none; }
+    .contact-panel .section-title { max-width: 850px; }
+    .contact-panel .section-lead { max-width: 600px; margin-bottom: 32px; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .contact-note { display: block; margin-top: 24px; color: #9495b2; font-size: .78rem; }
+    .site-footer { border-top: 1px solid var(--line); padding: 29px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .footer-inner p { color: #8186a1; font-size: .79rem; margin: 0; }
+    .footer-inner a { color: #b1b5ca; font-size: .79rem; }
+    .footer-inner a:hover { color: var(--cyan); }
+    .footer-links { display: flex; gap: 18px; }
+
+    @media (max-width: 1050px) {
+      .nav-links { gap: 16px; }
+      .nav-cta { display: none; }
+      .hero h1 { font-size: clamp(3.4rem, 6.7vw, 5.6rem); }
+      .hero-art { min-height: 470px; }
+      .floating-label.bottom { left: -5px; }
+      .event-grid { grid-template-columns: repeat(2, 1fr); }
+      .event-card { min-height: 240px; }
+    }
+    @media (max-width: 760px) {
+      .container { width: min(var(--wrap), calc(100% - 36px)); }
+      .nav-inner { min-height: 73px; }
+      .menu-button { display: grid; }
+      .nav-links { display: none; position: absolute; left: 0; right: 0; top: 73px; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 18px 24px; background: rgba(9,10,18,.98); border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px rgba(0,0,0,.25); }
+      .site-header.is-open .nav-links { display: flex; }
+      .nav-links a { padding: 13px 8px; font-size: .98rem; }
+      .hero { padding: 130px 0 60px; min-height: auto; }
+      .hero-layout { grid-template-columns: 1fr; gap: 8px; }
+      .hero-copy { padding: 0; }
+      .hero h1 { font-size: clamp(3.4rem, 12.7vw, 5.6rem); letter-spacing: -.075em; }
+      .hero-description { max-width: 550px; }
+      .hero-caption { margin-top: 45px; }
+      .hero-art { min-height: 410px; }
+      .vinyl { width: min(350px, 82vw); }
+      .floating-label.top { top: 25px; right: 2%; }
+      .floating-label.bottom { bottom: 17px; left: 2%; }
+      .ticker-inner { gap: 14px 24px; justify-content: center; }
+      .ticker-item { font-size: .65rem; }
+      .section { padding: 78px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-intro { position: static; }
+      .section-top { align-items: start; flex-direction: column; }
+      .section-top .section-lead { max-width: 570px; }
+      .contact { padding-top: 30px; padding-bottom: 75px; }
+    }
+    @media (max-width: 470px) {
+      .hero h1 { font-size: clamp(3rem, 13vw, 4rem); }
+      .hero-actions .btn { width: 100%; }
+      .hero-art { min-height: 345px; margin-top: 12px; }
+      .vinyl { width: min(285px, 82vw); }
+      .floating-label.top { top: 0; right: 0; padding: 11px 14px; }
+      .floating-label.bottom { bottom: 0; left: 0; padding: 10px 13px; }
+      .ticker-inner { justify-content: start; }
+      .event-grid { grid-template-columns: 1fr; }
+      .event-card { min-height: 205px; }
+      .milestone { grid-template-columns: 60px 1fr; gap: 14px; padding: 19px 16px; }
+      .milestone .age { font-size: 1.7rem; }
+      .release-card { border-radius: 20px; }
+      .release-body { font-size: .95rem; }
+      .release-bottom { align-items: flex-start; flex-direction: column; }
+      .release-bottom .btn { width: 100%; }
+      .contact-panel { border-radius: 20px; }
+      .contact-actions .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+  <header class="site-header" id="cabecalho">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio" aria-label="DJ Juninho-BSB, voltar ao início">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span>DJ JUNINHO <span class="gradient-text">BSB</span><small>Brasília · DF</small></span>
+      </a>
+      <nav class="nav-links" id="nav-principal" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#historia">Minha história</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#release">Release</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a href="#contato" class="btn btn-primary nav-cta">Vamos conversar <span class="arrow" aria-hidden="true">↗</span></a>
+      <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal"><span aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="hero-kicker"><span class="pulse-dot" aria-hidden="true"></span> DJ · Brasília / DF</div>
+          <h1 id="hero-title">UM SONHO.<span>UMA <span class="gradient-text">BATIDA.</span></span>UMA HISTÓRIA.</h1>
+          <p class="hero-description">Muito além da música: energia, conexão e a trilha sonora de momentos que merecem ser lembrados. Conheça a trajetória do DJ Juninho-BSB.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#historia">Conheça minha história <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="#release">Ler release oficial <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-caption"><span class="line" aria-hidden="true"></span> De Sobradinho para os palcos da vida</p>
+        </div>
+        <div class="hero-art" role="img" aria-label="Arte abstrata de um disco de vinil girando com as cores azul e roxo">
+          <div class="art-halo" aria-hidden="true"></div>
+          <div class="vinyl" aria-hidden="true">
+            <div class="record-label">JUNINHO<small>BSB · DJ</small><b></b></div>
+          </div>
+          <div class="floating-label top" aria-hidden="true"><span>A origem</span><strong>Brasília, DF</strong></div>
+          <div class="floating-label bottom" aria-hidden="true">
+            <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+            <div><strong>Viva cada batida</strong><span>Música e celebração</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Áreas de atuação">
+      <div class="container ticker-inner">
+        <span class="ticker-item">Música</span>
+        <span class="ticker-item">Sonorização</span>
+        <span class="ticker-item">Iluminação</span>
+        <span class="ticker-item">Experiências</span>
+      </div>
+    </div>
+
+    <section class="section" id="historia" aria-labelledby="historia-title">
+      <div class="container about-grid">
+        <div class="about-intro">
+          <p class="eyebrow">01 / Minha essência</p>
+          <h2 class="section-title" id="historia-title">Tudo começa com uma <span class="gradient-text">paixão.</span></h2>
+          <p class="section-lead">O sonho de um garoto de Brasília que encontrou na música uma maneira de aproximar pessoas.</p>
+          <p class="quote">“Cada evento tem sua própria energia. A música ajuda a contar essa história.”</p>
+        </div>
+        <div class="about-text">
+          <p><strong>Marcos R. Junior</strong>, conhecido artisticamente como <strong>DJ Juninho-BSB</strong>, começou a tocar aos 13 anos, em festas de familiares e amigos. A curiosidade pelos equipamentos e o desejo de se tornar DJ abriram caminho para uma trajetória dedicada à música.</p>
+          <p>Natural de Brasília e morador de Sobradinho, aos 16 anos já se apresentava em aniversários, casamentos e diferentes celebrações. Sua experiência passou também por eventos realizados em embarcações conhecidas da capital.</p>
+          <p>Com conhecimentos em sonorização e iluminação e gosto musical eclético, Juninho busca entender a identidade de cada evento e adaptar seu repertório ao público presente.</p>
+          <div class="timeline" aria-label="Marcos da trajetória">
+            <div class="milestone"><span class="age">13</span><div><h3>O primeiro passo</h3><p>Início da trajetória como DJ em festas de amigos e familiares.</p></div></div>
+            <div class="milestone"><span class="age">16</span><div><h3>Novos públicos</h3><p>Apresentações em aniversários, casamentos e eventos em Brasília.</p></div></div>
+            <div class="milestone"><span class="age">∞</span><div><h3>A música continua</h3><p>Uma história movida pela conexão com as pessoas e por novos desafios.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section events" id="eventos" aria-labelledby="eventos-title">
+      <div class="container">
+        <p class="eyebrow">02 / Experiências</p>
+        <div class="section-top">
+          <h2 class="section-title" id="eventos-title">Cada evento tem seu <span class="gradient-text">ritmo.</span></h2>
+          <p class="section-lead">Uma trajetória construída com diferentes públicos, ambientes e celebrações.</p>
+        </div>
+        <div class="event-grid">
+          <article class="event-card" style="--glow:rgba(69,219,236,.20)">
+            <span class="number">01 /</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 48h40M17 43l8-23 7 12 7-17 8 28M18 13l3-4m19 1 3 5M8 25l6 2m38-5 5-4"/></svg>
+            <div><h3>Aniversários & festas</h3><p>Boa música para reunir pessoas e celebrar novas histórias.</p></div>
+          </article>
+          <article class="event-card" style="--glow:rgba(175,116,255,.23)">
+            <span class="number">02 /</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 52 12 32C-1 18 18 5 32 21 46 5 65 18 52 32L32 52Z"/><path d="M21 29h22"/></svg>
+            <div><h3>Casamentos</h3><p>Atmosferas sonoras para momentos especiais e celebrações.</p></div>
+          </article>
+          <article class="event-card" style="--glow:rgba(69,219,236,.17)">
+            <span class="number">03 /</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M7 48h50M12 48V23l20-11 20 11v25M20 30h24M20 38h24M32 12v36"/></svg>
+            <div><h3>Eventos privados</h3><p>Repertório adaptado à proposta e ao perfil de cada ocasião.</p></div>
+          </article>
+          <article class="event-card" style="--glow:rgba(175,116,255,.20)">
+            <span class="number">04 /</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="m10 39 8 12h27l9-12H10ZM24 39V18l19 12H24M24 15v24M7 55c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3 4 3 8 3"/></svg>
+            <div><h3>Eventos em embarcações</h3><p>Experiências que também fazem parte da sua história em Brasília.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="release" aria-labelledby="release-title">
+      <div class="container">
+        <div class="release-head">
+          <p class="eyebrow">03 / Apresentação oficial</p>
+          <h2 class="section-title" id="release-title">A história por trás do <span class="gradient-text">som.</span></h2>
+          <p class="section-lead">Um release artístico organizado para divulgação, apresentações e materiais de eventos.</p>
+        </div>
+        <article class="release-card" aria-labelledby="release-card-title">
+          <div class="release-meta"><span>Release artístico · DJ Juninho-BSB</span><span class="tag">Brasília / DF</span></div>
+          <h3 id="release-card-title">Um sonho que se tornou <span class="gradient-text">realidade.</span></h3>
+          <div class="release-body" id="texto-release">
+            <p><strong>Marcos R. Junior</strong>, conhecido artisticamente como <strong>DJ Juninho-BSB</strong>, iniciou sua trajetória musical aos 13 anos, tocando em festas de familiares e amigos. Movido pela curiosidade e por um sonho de se tornar DJ e se apresentar em grandes eventos, transformou as primeiras experiências em uma paixão que continua guiando seu caminho.</p>
+            <p>Natural de Brasília e morador de Sobradinho, aos 16 anos Juninho já acumulava apresentações em aniversários, casamentos e outras celebrações. Ao longo dessa trajetória, também participou de eventos em embarcações conhecidas da capital federal, ampliando seu contato com públicos e ambientes variados.</p>
+            <p>Com conhecimentos em sonorização e iluminação, além de um gosto musical eclético, DJ Juninho-BSB valoriza a versatilidade e a conexão com as pessoas. Sua proposta é compreender o estilo de cada evento, conhecer as expectativas dos anfitriões e criar um repertório que converse com os convidados.</p>
+            <blockquote class="release-quote">Mais do que tocar músicas, sua missão é transformar momentos em lembranças inesquecíveis.</blockquote>
+            <p>Para DJ Juninho-BSB, cada apresentação é uma oportunidade de compartilhar energia, celebrar histórias e fazer da música o elo entre pessoas e experiências.</p>
+          </div>
+          <div class="release-bottom">
+            <div><p>Texto pronto para usar em divulgação e apresentações.</p><span class="copy-feedback" role="status" aria-live="polite" id="copy-feedback"></span></div>
+            <button class="btn btn-outline" type="button" id="copiar-release"><span aria-hidden="true">⧉</span> Copiar release</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="contact-panel">
+          <p class="eyebrow">04 / Conexão</p>
+          <h2 class="section-title" id="contato-title">A próxima história pode começar <span class="gradient-text">aqui.</span></h2>
+          <p class="section-lead">Conheça mais sobre DJ Juninho-BSB e acompanhe sua trajetória nas redes sociais.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://www.google.com/search?q=site%3Ainstagram.com+%22DJ+Juninho%22+Bras%C3%ADlia" target="_blank" rel="noopener noreferrer" aria-label="Pesquisar DJ Juninho de Brasília no Instagram usando o Google">Encontrar no Instagram <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="#release">Ver release oficial <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <small class="contact-note">Instagram indicado na apresentação original: “Djjuninho-bsb”. O endereço exato do perfil ainda precisa ser confirmado para colocar um link direto.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>DJ JUNINHO <span class="gradient-text">BSB</span><small>Brasília · DF</small></span></a>
+      <p>© <span id="ano">2026</span> DJ Juninho-BSB. Música que conecta pessoas.</p>
+      <div class="footer-links"><a href="#inicio">Voltar ao topo ↑</a><a href="#release">Release</a></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var header = document.getElementById('cabecalho');
+      var menuButton = document.getElementById('menu-button');
+      var nav = document.getElementById('nav-principal');
+      var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+      var year = document.getElementById('ano');
+      year.textContent = new Date().getFullYear();
+
+      function closeMenu() {
+        header.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Abrir menu');
+      }
+      menuButton.addEventListener('click', function () {
+        var open = header.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      });
+      links.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+      document.addEventListener('click', function (event) {
+        if (header.classList.contains('is-open') && !header.contains(event.target)) closeMenu();
+      });
+      function handleScroll() {
+        header.classList.toggle('is-scrolled', window.scrollY > 18);
+      }
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              links.forEach(function (link) {
+                if (link.getAttribute('href') === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+              });
+            }
+          });
+        }, { rootMargin: '-35% 0px -50% 0px' });
+        ['inicio', 'historia', 'eventos', 'release', 'contato'].forEach(function (id) {
+          var section = document.getElementById(id);
+          if (section) observer.observe(section);
+        });
+      }
+
+      var copyButton = document.getElementById('copiar-release');
+      var feedback = document.getElementById('copy-feedback');
+      var releaseTitle = document.getElementById('release-card-title');
+      var releaseBody = document.getElementById('texto-release');
+      function getReleaseText() {
+        return 'DJ JUNINHO-BSB — RELEASE ARTÍSTICO\n\nUM SONHO QUE SE TORNOU REALIDADE.\n\n' +
+          Array.prototype.slice.call(releaseBody.children).map(function (node) {
+            return node.textContent.trim();
+          }).join('\n\n') + '\n\nBrasília / DF';
+      }
+      copyButton.addEventListener('click', function () {
+        var content = getReleaseText();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(content).then(function () {
+            feedback.textContent = 'Release copiado!';
+            copyButton.textContent = '✓ Copiado';
+            setTimeout(function () { copyButton.textContent = '⧉ Copiar release'; }, 2200);
+          }).catch(function () {
+            feedback.textContent = 'Não foi possível copiar automaticamente. Selecione o texto acima para copiar.';
+          });
+        } else {
+          feedback.textContent = 'Selecione o texto acima para copiar o release.';
+        }
+      });
+    }());
+  </script>
+</body>
+</html>
