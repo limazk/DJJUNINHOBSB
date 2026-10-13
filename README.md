@@ -11,25 +11,25 @@ Site de apresentação artística do **DJ Juninho-BSB** (Marcos R. Junior), de B
 - Interface responsiva, menu móvel acessível, animações respeitando preferências de movimento reduzido.
 
 ## Arquivos
-- \`index.html\` — toda a página, os estilos e o JavaScript (sem etapa de build).
-- \`favicon.svg\` — ícone original em SVG.
+- `index.html` — toda a página, os estilos e o JavaScript (sem etapa de build).
+- `favicon.svg` — ícone original em SVG.
 
 ## Como abrir localmente
 1. Baixe os arquivos do repositório.
-2. Abra \`index.html\` no navegador.
+2. Abra `index.html` no navegador.
 
 Opcionalmente, com Python instalado:
 
-\`\`\`bash
+```bash
 python -m http.server 8000
-\`\`\`
+```
 
-Acesse \`http://localhost:8000\`.
+Acesse `http://localhost:8000`.
 
 ## Publicar com GitHub Pages
 No repositório do GitHub, abra **Settings → Pages**:
 1. Em *Build and deployment*, escolha *Deploy from a branch*.
-2. Selecione a branch \`main\` e a pasta \`/ (root)\`.
+2. Selecione a branch `main` e a pasta `/ (root)`.
 3. Salve. Aguarde a publicação informada pelo GitHub.
 
 O site está pronto para ser hospedado como página estática, mas **o GitHub Pages não é ativado automaticamente por este repositório**.
@@ -37,7 +37,7 @@ O site está pronto para ser hospedado como página estática, mas **o GitHub Pa
 ## Informação pendente antes da divulgação
 O material original indica o Instagram como **“Djjuninho-bsb”**, mas esse texto não é um nome de usuário válido do Instagram (o caractere hífen não é permitido em nomes de usuário). Para evitar direcionar visitantes para um perfil errado, o site atualmente aponta para uma **pesquisa pública**.
 
-Assim que o endereço oficial for confirmado, substitua no \`index.html\` o link externo da seção **Contato** por \`https://www.instagram.com/USUARIO_CORRETO/\`. Também vale incluir futuramente:
+Assim que o endereço oficial for confirmado, substitua no `index.html` o link externo da seção **Contato** por `https://www.instagram.com/USUARIO_CORRETO/`. Também vale incluir futuramente:
 - Fotos oficiais autorizadas do DJ.
 - Contato profissional ou WhatsApp comercial, caso desejado.
 - Agenda, portfólio de eventos e vídeos ou sets, quando disponíveis e autorizados.
