@@ -48,18 +48,26 @@ O site não depende de framework nem de serviços pagos. O botão de copiar a re
 ## Conteúdo e fontes
 O conteúdo biográfico foi reescrito exclusivamente com base na release fornecida para este projeto. Não foram criados depoimentos, números de eventos, contratos ou conquistas não comprovadas.
 
-## Fotos reais do portfólio
-A galeria e o destaque do artista já estão referenciados no `index.html`, mas os arquivos binários precisam existir no repositório, dentro da pasta `assets/`, com os nomes exatos:
+## Galeria de fotos — integrada
 
-- `assets/dj-juninho.png`
-- `assets/evento-pista-dourada.jpg`
-- `assets/evento-tela-pista.jpg`
-- `assets/evento-estrutura-lilas.jpg`
-- `assets/evento-pista-animada.jpg`
+As cinco fotos originais foram otimizadas para a web em WebP e **enviadas ao próprio repositório**, dentro de `assets/`. As imagens não dependem de links temporários externos.
 
-Foi preparado um ZIP contendo esses cinco arquivos com os nomes certos. **Não considerar a galeria publicada integralmente enquanto não houver o upload dos arquivos**. No GitHub, envie a pasta `assets/` e faça commit na branch `main`; o Render disparará deploy automático. Até lá os endereços locais das imagens não funcionarão.
+| Arquivo | Uso |
+| --- | --- |
+| `assets/dj-juninho.webp` | Destaque principal do artista e imagem social |
+| `assets/evento-pista-dourada.webp` | Galeria: pista iluminada |
+| `assets/evento-tela-pista.webp` | Galeria: painel e pista de LED |
+| `assets/evento-estrutura-lilas.webp` | Galeria: iluminação cênica |
+| `assets/evento-pista-animada.webp` | Galeria: celebração |
 
-## Contatos atualizados
-Instagram oficial: https://www.instagram.com/djjuninhobsb/
+As fotos abrem em uma nova guia ao serem selecionadas. A versão otimizada mantém boa qualidade visual e torna o carregamento muito mais rápido que as imagens originais. As fotos foram enviadas pelo usuário.
 
-Telefone fornecido: `6192019714`. É um número de 10 dígitos incluindo DDD; confirmar os dígitos com o responsável antes de configurar o botão de WhatsApp (números móveis brasileiros normalmente têm 11 dígitos com DDD).
+## Contatos oficiais
+
+- Instagram: https://www.instagram.com/djjuninhobsb/
+- WhatsApp: **(61) 99201-9714**
+- Link de orçamento: https://wa.me/5561992019714
+
+## Publicação automática
+
+O site está conectado a https://dj-juninho-bsb.onrender.com (Render Static Site). Novos commits na branch `main` disparam deploy automático.
